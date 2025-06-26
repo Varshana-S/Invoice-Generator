@@ -1,4 +1,4 @@
-const API_BASE = 'https://invoice-generator-sk8x.onrender.com/api/auth';
+const API_BASE = 'https://invoice-generator-4hbu.onrender.com/api/auth';
 
 class ApiService {
   constructor() {
