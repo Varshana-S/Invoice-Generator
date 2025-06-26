@@ -8,7 +8,7 @@ Create sleek, professional invoices in seconds. This modern invoice generator is
 
  🚀 Key Features
 
-- ⚡ **Lightning Fast** – Instantly create invoices, no complex setup or signup  
+- ⚡ **Lightning Fast** – Instantly create invoices  
 - 🛡 **100% Private & Secure** – Your data stays in your browser  
 - 🎨 **Modern Design** – Beautiful interface inspired by professional invoicing tools  
 - 📱 **Mobile Friendly** – Responsive across all devices  
