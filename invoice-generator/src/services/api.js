@@ -1,26 +1,23 @@
-const API_BASE = 'https://invoice-generator-sk8x.onrender.com/api';
+const API_BASE = 'https://invoice-generator-sk8x.onrender.com/api/auth';
 
 class ApiService {
   constructor() {
-    this.baseURL = API_BASE; // ✅ Corrected from API_BASE_URL
+    this.baseURL = API_BASE;
   }
 
   // Helper method to make HTTP requests
   async makeRequest(endpoint, options = {}) {
     const url = `${this.baseURL}${endpoint}`;
-    
     const defaultOptions = {
       headers: {
         'Content-Type': 'application/json',
       },
     };
-
     // Add authorization header if token exists
     const token = localStorage.getItem('token');
     if (token) {
       defaultOptions.headers['Authorization'] = `Bearer ${token}`;
     }
-
     const config = {
       ...defaultOptions,
       ...options,
@@ -29,15 +26,12 @@ class ApiService {
         ...options.headers,
       },
     };
-
     try {
       const response = await fetch(url, config);
       const data = await response.json();
-
       if (!response.ok) {
         throw new Error(data.message || `HTTP error! status: ${response.status}`);
       }
-
       return data;
     } catch (error) {
       console.error('API Request Error:', error);
@@ -47,24 +41,22 @@ class ApiService {
 
   // Authentication Methods
   async register(userData) {
-    return this.makeRequest('/auth/register', {
+    return this.makeRequest('/register', {
       method: 'POST',
       body: JSON.stringify(userData),
     });
   }
 
   async login(credentials) {
-    const response = await this.makeRequest('/auth/login', {
+    const response = await this.makeRequest('/login', {
       method: 'POST',
       body: JSON.stringify(credentials),
     });
-
     // Store token and user data
     if (response.success && response.data.token) {
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', JSON.stringify(response.data.user));
     }
-
     return response;
   }
 
@@ -74,18 +66,18 @@ class ApiService {
   }
 
   async getProfile() {
-    return this.makeRequest('/auth/me');
+    return this.makeRequest('/me');
   }
 
   async updateProfile(profileData) {
-    return this.makeRequest('/auth/profile', {
+    return this.makeRequest('/profile', {
       method: 'PUT',
       body: JSON.stringify(profileData),
     });
   }
 
   async changePassword(passwordData) {
-    return this.makeRequest('/auth/change-password', {
+    return this.makeRequest('/change-password', {
       method: 'POST',
       body: JSON.stringify(passwordData),
     });
@@ -138,8 +130,8 @@ class ApiService {
   // Test backend connection
   async testConnection() {
     try {
-      const response = await fetch(`${this.baseURL.replace('/api', '')}/health`);
-      const data = await response.json();
+      const healthResponse = await fetch(`${this.baseURL.replace('/api/auth', '')}/health`);
+      const data = await healthResponse.json();
       console.log('Backend connection test:', data);
       return data;
     } catch (error) {
