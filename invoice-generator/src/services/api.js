@@ -1,8 +1,8 @@
-const API_BASE_URL = "https://invoice-generator-sk8x.onrender.com";
+const API_BASE = 'https://invoice-generator-sk8x.onrender.com/api';
 
 class ApiService {
   constructor() {
-    this.baseURL = API_BASE_URL;
+    this.baseURL = API_BASE; // ✅ Corrected from API_BASE_URL
   }
 
   // Helper method to make HTTP requests
@@ -135,7 +135,7 @@ class ApiService {
     });
   }
 
-  // Test connection
+  // Test backend connection
   async testConnection() {
     try {
       const response = await fetch(`${this.baseURL.replace('/api', '')}/health`);
@@ -170,4 +170,4 @@ class ApiService {
 // Create and export a singleton instance
 const apiService = new ApiService();
 
-export default apiService; 
+export default apiService;

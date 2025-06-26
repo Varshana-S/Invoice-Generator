@@ -51,6 +51,7 @@ app.get('/health', (req, res) => {
 
 // API routes
 app.use('/api/auth', authRoutes);
+
 app.use('/api/forms', formRoutes);
 
 // Root endpoint
