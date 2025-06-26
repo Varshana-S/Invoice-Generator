@@ -1,0 +1,49 @@
+.page {
+  max-width: 450px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.page h2 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: #22c55e;
+}
+
+.page input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.page button {
+  background-color: #22c55e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.page button:hover {
+  background-color: #16a34a;
+}
+
+.invoice-full-page {
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #f3f4f6;
+}
+.invoice-full-page > * {
+  max-width: 980px;
+  width: 100%;
+}
