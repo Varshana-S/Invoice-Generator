@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://invoice-generator-1-b4fg.onrender.com";
+const API_BASE_URL = "https://invoice-generator-sk8x.onrender.com";
 
 class ApiService {
   constructor() {
