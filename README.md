@@ -1,6 +1,6 @@
  🧾 Invoice Generator
 
-Create sleek, professional invoices in seconds. This modern invoice generator is designed for freelancers, small businesses, and entrepreneurs who need fast, customizable, and exportable invoices — no sign-up required.
+Create sleek, professional invoices in seconds. This modern invoice generator is designed for freelancers, small businesses, and entrepreneurs who need fast, customizable, and exportable invoices — sign-up required.
 
 > 🎉 Generate invoices in seconds. Print or download as PDF. Fully responsive and secure.
 
