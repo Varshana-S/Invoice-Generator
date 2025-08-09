@@ -24,7 +24,7 @@ Create sleek, professional invoices in seconds. This modern invoice generator is
 
 **Frontend**
 - React + Vite ⚡  
-- Vanilla CSS (No Tailwind or Bootstrap)  
+- CSS 
 - React Router DOM  
 - Deployed on **Vercel**
 
